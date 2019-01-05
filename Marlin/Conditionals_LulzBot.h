@@ -13,13 +13,14 @@
  * got disabled.
  */
 
-#define LULZBOT_FW_VERSION ".29" // Change this with each update
+#define LULZBOT_FW_VERSION ".29.2" // Change this with each update
 
 #if ( \
     !defined(LULZBOT_Gladiola_Mini) && \
     !defined(LULZBOT_Gladiola_MiniLCD) && \
     !defined(LULZBOT_Juniper_TAZ5) && \
     !defined(LULZBOT_Oliveoil_TAZ6) && \
+    !defined(LULZBOT_Oliveoil_TAZ6_Retro) && \
     !defined(LULZBOT_Hibiscus_Mini2) \
 ) || ( \
     !defined(TOOLHEAD_Gladiola_SingleExtruder) && \
@@ -109,6 +110,25 @@
     #define LULZBOT_BAUDRATE 250000
     #define LULZBOT_PRINTCOUNTER
     #define LULZBOT_UUID "845f003c-aebd-4e53-a6b9-7d0984fde609"
+#endif
+
+#if defined(LULZBOT_Oliveoil_TAZ6_Retro)
+    #define LULZBOT_CUSTOM_MACHINE_NAME "LulzBot TAZ 6 Retro"
+    #define LULZBOT_LCD_MACHINE_NAME "TAZ 6 Retro"
+    #define LULZBOT_IS_TAZ
+    #define LULZBOT_TAZ_BED
+    #define LULZBOT_USE_EINSY_RETRO
+    #define LULZBOT_USE_LCD_DISPLAY
+    #define LULZBOT_USE_AUTOLEVELING
+    #define LULZBOT_SENSORLESS_HOMING
+    #define LULZBOT_USE_NORMALLY_CLOSED_ENDSTOPS
+    #define LULZBOT_USE_Z_SCREW
+    #define LULZBOT_USE_Z_BACKLASH_COMPENSATION
+    #define LULZBOT_BAUDRATE 250000
+    #define LULZBOT_PRINTCOUNTER
+    #define LULZBOT_UUID "845f003c-aebd-4e1d-ba3a-a20126d7930f"
+    #define S_CURVE_ACCELERATION
+    #define LULZBOT_LIGHTWEIGHT_UI
 #endif
 
 #if defined(LULZBOT_Hibiscus_Mini2)
@@ -202,6 +222,11 @@
 #define LULZBOT_NO_ENDSTOP                    true
 
 #if defined(LULZBOT_IS_MINI) && defined(LULZBOT_USE_EINSY_RETRO)
+    // Experimental Mini retrofitted with EinsyRambo from UltiMachine
+    #define LULZBOT_MOTHERBOARD                   BOARD_EINSY_RETRO
+    #define LULZBOT_CONTROLLER_FAN_PIN            FAN1_PIN  // Digital pin 6
+
+#elif defined(LULZBOT_IS_TAZ) && defined(LULZBOT_USE_EINSY_RETRO)
     // Experimental Mini retrofitted with EinsyRambo from UltiMachine
     #define LULZBOT_MOTHERBOARD                   BOARD_EINSY_RETRO
     #define LULZBOT_CONTROLLER_FAN_PIN            FAN1_PIN  // Digital pin 6
@@ -560,7 +585,7 @@
         "M117 Leveling done.\n"  /* Set LCD status */
 #endif
 
-#if defined(LULZBOT_USE_Z_SCREW)
+#if defined(LULZBOT_USE_Z_SCREW) && !defined(LULZBOT_Oliveoil_TAZ6_Retro)
     // The older Minis seem succeptible to noise in the probe lines.
     // This restores the sampling of endstops as it existed in previous
     // version of Marlin.
@@ -709,7 +734,11 @@
     #define LULZBOT_LCD_TOOLHEAD_NAME          "Single Extruder"
 //          16 chars max                            ^^^^^^^^^^^^^^^
     #define LULZBOT_M115_EXTRUDER_TYPE         "SingleExtruder"
-    #define LULZBOT_MOTOR_CURRENT_E            750 // mA
+    #if defined(LULZBOT_USE_EINSY_RETRO)
+        #define LULZBOT_MOTOR_CURRENT_E          960 // mA
+    #else
+        #define LULZBOT_MOTOR_CURRENT_E          750 // mA
+    #endif
     #define LULZBOT_X_MAX_ENDSTOP_INVERTING    LULZBOT_NORMALLY_CLOSED_ENDSTOP
     #define LULZBOT_AO_Hexagon
     #define LULZBOT_E_STEPS                    830
@@ -720,7 +749,11 @@
     #define LULZBOT_LCD_TOOLHEAD_NAME          "Aerostruder"
 //          16 chars max                       ^^^^^^^^^^^^^^^
     #define LULZBOT_M115_EXTRUDER_TYPE         "Aerostruder"
-    #define LULZBOT_MOTOR_CURRENT_E            875 // mA
+    #if defined(LULZBOT_USE_EINSY_RETRO)
+        #define LULZBOT_MOTOR_CURRENT_E          960 // mA
+    #else
+        #define LULZBOT_MOTOR_CURRENT_E          875 // mA
+    #endif
     #define LULZBOT_X_MAX_ENDSTOP_INVERTING    LULZBOT_NORMALLY_CLOSED_ENDSTOP
     #define LULZBOT_E3D_Titan_Aero_V6
     #define LULZBOT_E_STEPS                    420
