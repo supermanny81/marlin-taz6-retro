@@ -120,10 +120,11 @@
     #define LULZBOT_USE_EINSY_RETRO
     #define LULZBOT_USE_LCD_DISPLAY
     #define LULZBOT_USE_AUTOLEVELING
+    #define LULZBOT_USE_HOME_BUTTON
     #define LULZBOT_SENSORLESS_HOMING
     #define LULZBOT_USE_NORMALLY_CLOSED_ENDSTOPS
     #define LULZBOT_USE_Z_SCREW
-    #define LULZBOT_USE_Z_BACKLASH_COMPENSATION
+    #define LULZBOT_USE_BACKLASH_COMPENSATION
     #define LULZBOT_BAUDRATE 250000
     #define LULZBOT_PRINTCOUNTER
     #define LULZBOT_UUID "845f003c-aebd-4e1d-ba3a-a20126d7930f"
@@ -242,7 +243,12 @@
 
 #if defined(LULZBOT_USE_HOME_BUTTON)
     #define LULZBOT_Z_MIN_PROBE_ENDSTOP
-    #define LULZBOT_Z_MIN_PROBE_PIN               SERVO0_PIN // Digital pin 22
+    #if defined(LULZBOT_USE_EINSY_RETRO)
+      #define SERVO0_PIN     11   // Y-MIN
+      #define LULZBOT_Z_MIN_PROBE_PIN               SERVO0_PIN // Digital pin 11
+    #else
+      #define LULZBOT_Z_MIN_PROBE_PIN               SERVO0_PIN // Digital pin 22
+    #endif
     // On the TAZ 6, the bed washers are on Z_MIN_PROBE while the
     // Z-Home button is on Z_MIN, yet we need both to be disabled
     // when z_probe_enabled is false. We added this special case
