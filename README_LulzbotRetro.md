@@ -8,36 +8,37 @@ A drill, a soldering iron, set of drill bits, and a set of allen keys are some o
 
 | Item                                                   | Qty |
 | ------------------------------------------------------ | --- |
-| [Einsy Retro](1) **Buy the kit**                       |   1 |
-| [M3 Heat Set Insert for Plastics](2)                   |   4 |
-| [M3 x 0.5mm Thread, 8mm Long Screws](3)                |   4 |
+| [Einsy Retro][1] **BUY THE KIT!!**                     |   1 |
+| [M3 Heat Set Insert for Plastics][2]                   |   4 |
+| [M3 x 0.5mm Thread, 8mm Long Screws][3]                |   4 |
 | M3 washers                                             |   4 |
-| [10P 5x2 IDC Flat Ribbon Data Cable 2.54mm](4) _maybe_ |   2 |
+| [10P 5x2 IDC Flat Ribbon Data Cable 2.54mm][4] _maybe_ |   2 |
 
 **Note: the flat ribbon cables are only necessary if you are upgrading from a Rambo 1.3L.  Taz 6 units with a RAMBO 1.4 already have the correct cable.**
 
 And then print out these items.
+
 | Item                                           | Qty |
 | ---------------------------------------------- | --- |
-| [Einsy Mount](stl-1)                           |   1 |
-| [Reset Button Jig](stl-2) _optional_           |   1 |
+| [Einsy Mount][stl-1]                           |   1 |
+| [Reset Button Jig][stl-2] _optional_           |   1 |
 
 ## Installing the Einsy Retro board
 
-The Einsy boards dimensions differ from the Rambos.  To use one in a Taz 6 case you will need to print out a new mount.  I recommend printing enough perimiters to makes the posts solid material.  Printing with 3 shells should suffice and 20% infill should work.  It's not a long print and you'll appreciate the extra plastic.  The STL for the mount is located here  [/stl/taz6-einsy-mount.stl](stl-1).
+The Einsy boards dimensions differ from the Rambos.  To use one in a Taz 6 case you will need to print out a new mount.  I recommend printing enough perimiters to makes the posts solid material.  Printing with 3 shells should suffice and 20% infill should work.  It's not a long print and you'll appreciate the extra plastic.  The STL for the mount is located here  [/stl/taz6-einsy-mount.stl][stl-1].
 
 #### Lets get started...
 
 Begin by unplugging your Taz unit, opening the back case and verifying that you have the correct ribbon cables needed for the upgrade.  If your board is a RAMBO 1.3L, you will need to purchase the ribbon cables if you haven't already done so.
 
 Next remove the cables for Extruder 2.  I remove the whole thing since multiple extruders won't be option for me anymore unless I go down the MMU or Palette path.
-![Rambo without Extruder 2](img-1)
+![Rambo without Extruder 2][img-1]
 
-![Mount with inserts](img-2)
+![Mount with inserts][img-2]
 
-![Mount in Taz](img-3)
+![Mount in Taz][img-3]
 
-![Reset Button Jig](img-4)
+![Reset Button Jig][img-4]
 
 ## LulzBot Retro Marlin firmware
 
