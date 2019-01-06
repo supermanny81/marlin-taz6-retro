@@ -2,7 +2,15 @@
 
 This mod is both a firmware and hardware modification.  It's easy to do if you have a little basic experience with electronics, particular the Arduino platform.  You will have to upload a new version of firmware to your retro in order for your printer to work.
 
-## What you will need to do this modification
+
+You can give this a try.
+
+#### Summary
+1. [What you will need to do this modification](#mod)
+2. [Installing the Einsy Retro board](#einsy)
+3. [LulzBot Retro Marlin firmware](#firmware)
+
+## What you will need to do this modification <a name="mod"></a>
 
 A drill, a soldering iron, set of drill bits, and a set of allen keys are some of the basic tools you will need to do this mod.  In additon, you will need to purchase the following.
 
@@ -23,7 +31,7 @@ And then print out these items.
 | [Einsy Mount][stl-1]                           |   1 |
 | [Reset Button Jig][stl-2] _optional_           |   1 |
 
-## Installing the Einsy Retro board
+## Installing the Einsy Retro board <a name="einsy"></a>
 
 The Einsy boards dimensions differ from the Rambos.  To use one in a Taz 6 case you will need to print out a new mount.  I recommend printing enough perimiters to makes the posts solid material.  Printing with 3 shells should suffice and 20% infill should work.  It's not a long print and you'll appreciate the extra plastic.  The STL for the mount is located here  [/stl/taz6-einsy-mount.stl][stl-1].
 
@@ -40,7 +48,7 @@ Next remove the cables for Extruder 2.  I remove the whole thing since multiple 
 
 ![Reset Button Jig][img-4]
 
-## LulzBot Retro Marlin firmware
+## LulzBot Retro Marlin firmware <a name="firmware"></a>
 
 This is clone of Lulzbot's Marlin repo.  Most things should look very familiar, just some macros and settings were changed where applicable, some stls were added along with these instructions.
 
