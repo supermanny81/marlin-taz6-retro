@@ -13,7 +13,7 @@
  * got disabled.
  */
 
-#define LULZBOT_FW_VERSION ".29.2" // Change this with each update
+#define LULZBOT_FW_VERSION ".29.3" // Change this with each update
 
 #if ( \
     !defined(LULZBOT_Gladiola_Mini) && \
@@ -113,8 +113,8 @@
 #endif
 
 #if defined(LULZBOT_Oliveoil_TAZ6_Retro)
-    #define LULZBOT_CUSTOM_MACHINE_NAME "LulzBot TAZ 6 Retro"
-    #define LULZBOT_LCD_MACHINE_NAME "TAZ 6 Retro"
+    #define LULZBOT_CUSTOM_MACHINE_NAME "LulzBot TAZ 6"
+    #define LULZBOT_LCD_MACHINE_NAME "TAZ 6"
     #define LULZBOT_IS_TAZ
     #define LULZBOT_TAZ_BED
     #define LULZBOT_USE_EINSY_RETRO
@@ -127,7 +127,7 @@
     #define LULZBOT_USE_BACKLASH_COMPENSATION
     #define LULZBOT_BAUDRATE 250000
     #define LULZBOT_PRINTCOUNTER
-    #define LULZBOT_UUID "845f003c-aebd-4e1d-ba3a-a20126d7930f"
+    #define LULZBOT_UUID "845f003c-aebd-4e53-a6b9-7d0984fde609"
     #define S_CURVE_ACCELERATION
     #define LULZBOT_LIGHTWEIGHT_UI
 #endif
