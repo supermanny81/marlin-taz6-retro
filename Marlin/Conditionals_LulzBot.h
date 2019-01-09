@@ -1942,7 +1942,7 @@
     #define LULZBOT_SHOW_CUSTOM_BOOTSCREEN
     #define LULZBOT_ENCODER_PULSES_PER_STEP 2
     #define LULZBOT_ENCODER_STEPS_PER_MENU_ITEM 1
-    #if defined(LULZBOT_IS_MINI)
+    #if defined(LULZBOT_IS_MINI) || (defined(LULZBOT_IS_TAZ) && defined(LULZBOT_LIGHTWEIGHT_UI))
         // In the experimental Gladiola_MiniLCD, the encoder direction is reversed.
         #define LULZBOT_REVERSE_ENCODER_DIRECTION
     #endif
