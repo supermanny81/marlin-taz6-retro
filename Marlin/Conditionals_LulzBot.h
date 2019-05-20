@@ -54,7 +54,7 @@
     #define LULZBOT_USE_NORMALLY_OPEN_ENDSTOPS
     #define LULZBOT_ENDSTOPS_ALWAYS_ON_DEFAULT
     #define LULZBOT_USE_Z_SCREW
-    #define LULZBOT_BACKLASH_COMPENSATION
+    #define LULZBOT_USE_Z_BACKLASH_COMPENSATION
     #define LULZBOT_BAUDRATE 250000
     #define LULZBOT_PRINTCOUNTER
     #define LULZBOT_UUID "351487b6-ca9a-4c1a-8765-d668b1da6585"
@@ -72,7 +72,7 @@
     #define LULZBOT_USE_NORMALLY_OPEN_ENDSTOPS
     #define LULZBOT_ENDSTOPS_ALWAYS_ON_DEFAULT
     #define LULZBOT_USE_Z_SCREW
-    #define LULZBOT_BACKLASH_COMPENSATION
+    #define LULZBOT_USE_Z_BACKLASH_COMPENSATION
     #define LULZBOT_BAUDRATE 250000
     #define LULZBOT_PRINTCOUNTER
     #define LULZBOT_UUID "083f68f1-028e-494c-98e1-f2e0dfaee9a5"
@@ -87,7 +87,7 @@
     #define LULZBOT_USE_MIN_ENDSTOPS
     #define LULZBOT_USE_NORMALLY_OPEN_ENDSTOPS
     #define LULZBOT_USE_Z_SCREW
-    #define LULZBOT_BACKLASH_COMPENSATION
+    #define LULZBOT_USE_Z_BACKLASH_COMPENSATION
     #define LULZBOT_BAUDRATE 250000
     #define LULZBOT_PRINTCOUNTER
     #define LULZBOT_UUID "c3255c96-4097-4884-8ed0-ded2ff9bae61"
@@ -106,7 +106,7 @@
     #define LULZBOT_USE_NORMALLY_CLOSED_ENDSTOPS
     #define LULZBOT_ENDSTOPS_ALWAYS_ON_DEFAULT
     #define LULZBOT_USE_Z_SCREW
-    #define LULZBOT_BACKLASH_COMPENSATION
+    #define LULZBOT_USE_Z_BACKLASH_COMPENSATION
     #define LULZBOT_BAUDRATE 250000
     #define LULZBOT_PRINTCOUNTER
     #define LULZBOT_UUID "845f003c-aebd-4e53-a6b9-7d0984fde609"
@@ -620,7 +620,11 @@
     #define LULZBOT_TOOLHEAD_WIPE_Y1_ADJ       0
     #define LULZBOT_TOOLHEAD_WIPE_Y2_ADJ       0
 
-    #if defined(LULZBOT_USE_EINSY_RETRO)
+    #if defined(LULZBOT_USE_EINSY_RETRO) || \
+        defined(TOOLHEAD_CecropiaSilk_SingleExtruderAeroV2) || \
+        defined(TOOLHEAD_AchemonSphinx_SmallLayer) || \
+        defined(TOOLHEAD_BandedTiger_HardenedSteel) || \
+        defined(TOOLHEAD_DingyCutworm_HardenedSteelPlus)
         #define LULZBOT_MOTOR_CURRENT_E          960 // mA
     #else
         #define LULZBOT_MOTOR_CURRENT_E         1250 // mA
@@ -1652,9 +1656,9 @@
         #endif
     #else
         #if defined(LULZBOT_Z_MIN_PROBE_ENDSTOP_INVERTING)
-            #define LULZBOT_TEST_PROBE_PIN !READ(Z_MIN_PROBE)
+            #define LULZBOT_TEST_PROBE_PIN !READ(Z_MIN_PROBE_PIN)
         #else
-            #define LULZBOT_TEST_PROBE_PIN  READ(Z_MIN_PROBE)
+            #define LULZBOT_TEST_PROBE_PIN  READ(Z_MIN_PROBE_PIN)
         #endif
     #endif
 
